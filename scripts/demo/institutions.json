@@ -1,0 +1,55 @@
+[
+  {
+    "id": "00000000-0000-0000-0000-000000000000",
+    "name": "المنصة الرئيسية (Super Admin)",
+    "type": "system",
+    "status": "active",
+    "max_students": 1000,
+    "settings_allowed_modes": ["qr", "roll_call", "hybrid"]
+  },
+  {
+    "id": "6aab49d8-8fb3-40f9-b982-7df5d3aae425",
+    "name": "مدرسة المستقبل التجريبية",
+    "type": "school",
+    "status": "active",
+    "max_students": 600,
+    "code": "QH-SCH-DEMO-001",
+    "settings_allowed_modes": ["qr", "roll_call", "hybrid"]
+  },
+  {
+    "id": "e9f83656-0735-4031-9a8a-c80164437261",
+    "name": "شركة كيو حضور التجريبية",
+    "type": "company",
+    "status": "active",
+    "max_students": 350,
+    "code": "QH-COM-DEMO-001",
+    "settings_allowed_modes": ["qr", "roll_call", "hybrid"]
+  },
+  {
+    "id": "103139b5-3b6a-41a0-a41c-577d0d66e16c",
+    "name": "جامعة سكيكدة 20 أوت 1955",
+    "type": "university",
+    "status": "active",
+    "max_students": 5000,
+    "code": "UNIV-SKIKDA-1955",
+    "settings_allowed_modes": ["qr", "roll_call", "hybrid"]
+  },
+  {
+    "id": "4d1c8305-f72a-43e4-9460-e00094439a19",
+    "name": "مركز التكوين الرقمي التجريبي",
+    "type": "training",
+    "status": "active",
+    "max_students": 450,
+    "code": "QH-TRN-DEMO-001",
+    "settings_allowed_modes": ["roll_call"]
+  },
+  {
+    "id": "77777777-bbbb-4bbb-9bbb-000000000301",
+    "name": "متوسطة لخضر قصاب",
+    "type": "school",
+    "status": "active",
+    "max_students": 1000,
+    "code": "kessab",
+    "settings_allowed_modes": ["qr", "roll_call", "hybrid"]
+  }
+]

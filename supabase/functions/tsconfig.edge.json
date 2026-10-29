@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowImportingTsExtensions": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "strict": false,
+    "lib": ["es2022", "dom"],
+    "types": ["node"],
+    "paths": {
+      "https://esm.sh/*": ["./types/esm_sh.d.ts"]
+    }
+  },
+  "include": ["register-attendance/index.ts", "types/esm_sh.d.ts"]
+}

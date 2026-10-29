@@ -1,0 +1,126 @@
+# ============================================
+# 🎓 University Attendance System - .gitignore
+# ============================================
+
+# =====================
+# 📦 Dependencies
+# =====================
+node_modules/
+.pnp
+.pnp.js
+
+# =====================
+# 🏗️ Build Output
+# =====================
+dist/
+dist-ssr/
+build/
+*.local
+
+# =====================
+# 📝 Logs
+# =====================
+logs/
+*.log
+npm-debug.log*
+vite-dev.*.log
+
+# =====================
+# 📦 Stray APKs at repo root (only public/download/*.apk should be tracked)
+# =====================
+/*.apk
+
+# =====================
+# 🔒 Single package manager (npm). Block any pnpm/yarn lockfiles.
+# =====================
+pnpm-lock.yaml
+yarn.lock
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# =====================
+# 🔐 Environment & Secrets
+# =====================
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+.env*.local
+scripts/demo/.env
+note.txt
+
+# =====================
+# 🖥️ Editor & IDE
+# =====================
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
+*.ipr
+*.iws
+
+# =====================
+# 💻 OS Files
+# =====================
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =====================
+# 📱 Flutter / Dart
+# =====================
+student_app_flutter/.dart_tool/
+student_app_flutter/.flutter-plugins
+student_app_flutter/.flutter-plugins-dependencies
+student_app_flutter/.metadata
+student_app_flutter/build/
+student_app_flutter/.idea/
+student_app_flutter/*.iml
+student_app_flutter/.pub-cache/
+student_app_flutter/.pub/
+student_app_flutter/android/local.properties
+student_app_flutter/android/.gradle/
+student_app_flutter/android/app/debug/
+student_app_flutter/android/app/profile/
+student_app_flutter/android/app/release/
+student_app_flutter/ios/Flutter/.last_build_id
+student_app_flutter/ios/Pods/
+student_app_flutter/**/doc/api/
+student_app_flutter/coverage/
+
+# =====================
+# 🔧 Misc
+# =====================
+*.tgz
+*.apk
+# Always ship the public download artifacts so /download page works in production
+!public/download/*.apk
+.cache/
+.temp/
+.vercel
+
+# 🤖 Kiro (contains MCP tokens & local agent settings)
+# =====================
+.kiro/settings/mcp.json
+
+# =====================
+# 🤖 AI Workspaces & Temporary Files
+# =====================
+.gemini/
+.claude/
+.cursor/
+.aider/
+.codex/
+.continue/
+.vscode-test/
+*.tmp

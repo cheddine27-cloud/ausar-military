@@ -1,0 +1,45 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    name: Lint and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Get pnpm store path
+        id: pnpm-cache
+        shell: bash
+        run: echo "STORE_PATH=$(pnpm store path)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache pnpm store
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint (ESLint)
+        run: pnpm run lint
+
+      - name: Production build (Vite)
+        env:
+          VITE_SUPABASE_URL: https://xdstewrosxrenrfrwprv.supabase.co
+          VITE_SUPABASE_ANON_KEY: dummy-anon-key-for-build
+          VITE_APP_NAME: Ausar Military
+          VITE_SUPER_ADMIN_USERNAME: dummy-sa
+          VITE_SUPER_ADMIN_PASSWORD: dummy-sa-password
+        run: pnpm run build

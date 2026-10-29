@@ -1,0 +1,8 @@
+node_modules/
+dist/
+student_app_flutter/
+*.apk
+# Always ship the public download APKs (served from /download page)
+!public/download/*.apk
+supabase/.temp/
+vite-dev.*.log

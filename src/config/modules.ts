@@ -53,7 +53,7 @@ export function registerModule(manifest: ModuleManifest): void {
  * Falls back to 'military' if the type is unknown or missing.
  */
 export function getModule(type?: string | null): ModuleManifest {
-  let resolvedType = type ?? 'military';
+  const resolvedType = type ?? 'military';
   return registry[resolvedType] ?? registry.military;
 }
 

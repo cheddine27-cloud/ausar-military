@@ -29,7 +29,6 @@ import {
 import { PERMISSIONS, can, type PermissionMap } from '@/lib/permissions';
 import { getSectorLabels, type SectorType } from '@/lib/sectorLabels';
 import type ExcelJS from 'exceljs';
-import StudentProfilePage from '../../modules/school/components/Student360/StudentProfilePage';
 import { isPrimaryOrMiddle } from '@/lib/schoolHelpers';
 
 interface Props {
@@ -448,16 +447,6 @@ export default function InstitutionStudents({ institutionId, institutionName, in
   };
 
   const [selectedStudentId360, setSelectedStudentId360] = useState<string | null>(null);
-
-  if ((institutionType === 'school' || institutionType === 'primary_school' || institutionType === 'secondary_school') && selectedStudentId360) {
-    return (
-      <StudentProfilePage
-        studentId={selectedStudentId360}
-        institutionId={institutionId}
-        onBack={() => setSelectedStudentId360(null)}
-      />
-    );
-  }
 
   return (
     <div className="space-y-5">

@@ -4,36 +4,22 @@ on: [push, pull_request]
 
 jobs:
   check:
-    name: Lint and build
+    name: Lint and build (Ausar Military)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js 24
+      - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: 24
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Get pnpm store path
-        id: pnpm-cache
-        shell: bash
-        run: echo "STORE_PATH=$(pnpm store path)" >> "$GITHUB_OUTPUT"
-
-      - name: Cache pnpm store
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-          key: pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: pnpm-store-
+          node-version: 20
+          cache: npm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm install --no-audit --no-fund
 
       - name: Lint (ESLint)
-        run: pnpm run lint
+        run: npm run lint --if-present
 
       - name: Production build (Vite)
         env:
@@ -42,4 +28,4 @@ jobs:
           VITE_APP_NAME: Ausar Military
           VITE_SUPER_ADMIN_USERNAME: dummy-sa
           VITE_SUPER_ADMIN_PASSWORD: dummy-sa-password
-        run: pnpm run build
+        run: npm run build
